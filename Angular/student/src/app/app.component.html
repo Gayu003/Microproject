@@ -1,0 +1,118 @@
+
+<div class ="background">
+  <div class="full">
+  <h2>Student Management System</h2>
+</div>
+<form #myform="ngForm">
+<div class="form" >
+  <h2>Student Details</h2>
+  <div class="marks">
+    <div>
+      <label>Student name</label>
+      <input type="text" name="id" id="id"  #id="ngModel" ngModel required pattern="[A-Za-z]+">
+      <div *ngIf="id.touched">
+        <div *ngIf="id.errors?.['required']">
+           <b style="color: red;">Name required</b>
+        </div>
+        <div *ngIf="id.errors?.['pattern']">
+            <b style="color:red ;">Invalid name</b>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Register Number</label>
+      <input type="text" name="regno" id="regno"  #regno="ngModel" ngModel required pattern="[0-9]+">
+      <div *ngIf="regno.touched">
+        <div *ngIf="regno.errors?.['required']">
+           <b style="color: red;">Register number </b>
+        </div>
+        <div *ngIf="regno.errors?.['pattern']">
+            <b style="color:red ;">Invalid Register Number</b>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- <div>
+      <label>Date of Birth</label>
+      <input type="date" name="date" id="regno"  #regno="ngModel" ngModel required pattern="[0-9]+">
+    </div>
+    <br>
+    <div>
+      <label for="dropdown">Gender</label>
+      <select id="dropdown" [(ngModel)]="selectedOption">
+        <option value="" disabled selected>Select your option</option>
+        <option *ngFor="let option of options" [value]="option.value" >{{ option.label }}</option>
+      </select>
+    </div>
+    <br> -->
+    <div>
+      <label>Father's Name</label>
+      <input type="text" name="fname" id="fname"  #fname="ngModel" ngModel required pattern="[A-Za-z]+">
+      <div *ngIf="fname.touched">
+        <div *ngIf="fname.errors?.['required']">
+           <b style="color: red;">Father's name required</b>
+        </div>
+        <div *ngIf="fname.errors?.['pattern']">
+            <b style="color:red ;">Invalid name</b>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Mother's Name</label>
+      <input type="text" name="mname" id="mname"  #mname="ngModel" ngModel required pattern="[A-Za-z]+">
+      <div *ngIf="mname.touched">
+        <div *ngIf="mname.errors?.['required']">
+           <b style="color: red;">Mother's name required</b>
+        </div>
+        <div *ngIf="mname.errors?.['pattern']">
+            <b style="color:red ;">Invalid name.
+
+            </b>
+        </div>
+    </div>
+    </div>
+    <br>
+    <!-- <div>
+      <label>Blood Group</label>
+      <input type="text" name="bg" >
+    </div>
+    <br> -->
+    <div>
+      <label>Phone no</label>
+      <input type="number" name="phone" id="phone"  #phone="ngModel" ngModel required pattern="[0-9]+">
+      <div *ngIf="phone.touched">
+        <div *ngIf="phone.errors?.['required']">
+           <b style="color: red;">Phone number required</b>
+        </div>
+        <div *ngIf="phone.errors?.['pattern']">
+            <b style="color:red ;">Invalid Phone Number</b>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div class="operations">
+      <button type="button" (click)="insertStudent(myform.value)">Insert</button>
+      <button type="button" (click)="updateStudent(myform.value)">Update</button>
+      <button type="button" (click)="deleteStudent(myform.value)">Delete</button>
+      <button type="button" (click)="findStudent(myform.value)">Find</button>
+      <button type="button" (click)="findallStudent()">Find all</button>
+    </div>
+    
+  </div>
+  <br>
+</div>
+</form>
+<h1 style="color:red">{{result}}</h1>
+</div>
+
+
+<div style="width: 100%;" *ngIf="flag">
+  <table width="80%" style="text-align: center;" class="table table-borderd">
+   <tr><th>Student Name</th><th>Student Regno</th><th>Student Father's name</th><th>Student Mother's name</th><th>Student Phone no</th></tr> 
+    <tr *ngFor="let stu of studentArr">
+        <td>{{stu.id}}</td><td>{{stu.regno}}</td><td>{{stu.fname}}</td><td>{{stu.mname}}</td><td>{{stu.phone}}</td>
+    </tr>
+ </table>
+ </div>

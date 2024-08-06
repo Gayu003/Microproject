@@ -1,0 +1,25 @@
+{
+  "students": [
+    {
+      "id": "Harish",
+      "regno": 102,
+      "fname": "Murugesan",
+      "mname": "Bhuvana",
+      "phone": 8668031624
+    },
+    {
+      "id": "Priya",
+      "regno": "107",
+      "fname": "Arun",
+      "mname": "Radha",
+      "phone": 7846257286
+    },
+    {
+      "id": "Selva",
+      "regno": "101",
+      "fname": "Sakthivel",
+      "mname": "Jothi",
+      "phone": 9025491185
+    }
+  ]
+}
